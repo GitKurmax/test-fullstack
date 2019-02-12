@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test fullstack</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<form action="#" id="form">
+		<div class="after">
+			<label for="fname">First name *</label>
+			<input type="text" class="text" name="" id="fname">
+			<div class="message"></div>
+		</div>
+		<div class="after">
+			<label for="lname">Last name *</label>
+			<input type="text" class="text" name="" id="lname">
+			<div class="message"></div>
+		</div>
+		<div class="after">
+			<label for="birth">Birthday *</label>
+			<input type="date" name="" id="birth">
+			<div class="message"></div>
+		</div>
+		<div id="radio">
+			<div class="rgender">
+				<label for="gender1">male</label>
+				<input  type="radio" class="gender" id="gender1" name="gender" checked>
+			</div>
+			<div class="rgender">
+				<label for="gender2">female</label>
+				<input  type="radio" class="gender" id="gender2" name="gender">
+			</div>
+		</div>
+		<div class="after">
+			<select id="country" placeholder="Select country">
+			<option disabled selected>--Select country-- *</option>
+			<option value="">Ukraine</option>
+    		<option value="">Poland</option>
+    		<option value="">United States</option>
+    		<option value="">China</option>
+		</select>
+		<div class="message"></div>
+		</div>
+		<div class="after">
+			<label for="email">Email adress *</label>	
+			<input type="text" name="" id="email" data-validation="email">
+			<div class="message"></div>
+		</div>
+		<div class="after">
+			<label for="password">Password *</label>	
+			<input type="password" name="" id="password">
+			<div class="message"></div>
+		</div>
+		<div class="after">
+			<label for="adress">Adress *</label>
+			<input type="text" class="text" name="" id="adress">
+			<div class="message"></div>
+		</div>
+		<textarea placeholder="Notes..." class="text area"rows="5" cols="50"></textarea><br>
+		<div id="req"><span>*</span> - required field</div>
+		<button type="submit" id="submit">Submit</button>
+	</form>
+	<script type="text/javascript" src="scripts/script.js"></script>
+</body>
+</html>
