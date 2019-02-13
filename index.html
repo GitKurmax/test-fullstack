@@ -6,34 +6,34 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<form action="#" id="form">
+	<form id="form">
 		<div class="after">
 			<label for="fname">First name *</label>
-			<input type="text" class="text" name="" id="fname">
+			<input type="text" name="" id="fname" data-validation="text">
 			<div class="message"></div>
 		</div>
 		<div class="after">
 			<label for="lname">Last name *</label>
-			<input type="text" class="text" name="" id="lname">
+			<input type="text" name="" id="lname" data-validation="text">
 			<div class="message"></div>
 		</div>
 		<div class="after">
 			<label for="birth">Birthday *</label>
-			<input type="date" name="" id="birth">
+			<input type="date" name="" id="birth" data-validation="date">
 			<div class="message"></div>
 		</div>
 		<div id="radio">
 			<div class="rgender">
 				<label for="gender1">male</label>
-				<input  type="radio" class="gender" id="gender1" name="gender" checked>
+				<input  type="radio" id="gender1" name="gender" data-validation="gender" checked>
 			</div>
 			<div class="rgender">
 				<label for="gender2">female</label>
-				<input  type="radio" class="gender" id="gender2" name="gender">
+				<input  type="radio" id="gender2" name="gender" data-validation="gender">
 			</div>
 		</div>
 		<div class="after">
-			<select id="country" placeholder="Select country">
+			<select placeholder="Select country" data-validation="select">
 			<option disabled selected>--Select country-- *</option>
 			<option value="">Ukraine</option>
     		<option value="">Poland</option>
@@ -44,22 +44,22 @@
 		</div>
 		<div class="after">
 			<label for="email">Email adress *</label>	
-			<input type="text" name="" id="email" data-validation="email">
+			<input type="text" name="" id="email" data-validation="email" >
 			<div class="message"></div>
 		</div>
 		<div class="after">
 			<label for="password">Password *</label>	
-			<input type="password" name="" id="password">
+			<input type="password" name="" id="password" data-validation="password">
 			<div class="message"></div>
 		</div>
 		<div class="after">
 			<label for="adress">Adress *</label>
-			<input type="text" class="text" name="" id="adress">
+			<input type="text" class="text" name="" id="adress" data-validation="text">
 			<div class="message"></div>
 		</div>
-		<textarea placeholder="Notes..." class="text area"rows="5" cols="50"></textarea><br>
-		<div id="req"><span>*</span> - required field</div>
-		<button type="submit" id="submit">Submit</button>
+		<textarea placeholder="Notes..." class="text area"rows="5" cols="50" data-validation="textarea"></textarea><br>
+		<div id="req">* - required field</div>
+		<button type="button" id="submit">Submit</button>
 	</form>
 	<script type="text/javascript" src="scripts/script.js"></script>
 </body>

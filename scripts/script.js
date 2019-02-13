@@ -1,22 +1,17 @@
 formValidation();
 
 function formValidation() {
-	let submit = document.querySelector('#submit');
+	let submitButton = document.querySelector('#submit');
 	let inputText = document.querySelectorAll('.text');
-	let birth = document.querySelector('#birth');
-	let gender = document.querySelectorAll('.gender');
-	let email = document.querySelector('#email');
-	let password = document.querySelector('#password');
 	let messages = {
 		empty: "This field is required",
 		email:  "Email address is not valid"
-	}
-	
-	submit.addEventListener('click', function(){
+		}
+
+	submitButton.addEventListener('click', function(){
 		let self = this;
-		validateEmpty(messages,self);
-		validateEmail(messages,email);
-		ifValid();
+		validate(messages,self);
+		setTimeout(ifValid,100);
 	});
 
 	for(elem of inputText){
@@ -41,7 +36,7 @@ function validateEmail(objMessages,elem){
 }
 
 function banСharacter(elem) {
-	if(event.target.tagName === 'TEXTAREA'){
+	if(elem.dataset.validation === 'textarea'){
 		return;
 	}
 	if(event.keyCode == 222){
@@ -49,25 +44,25 @@ function banСharacter(elem) {
 	};
 }
 
-function validateEmpty(objMessages,button) {
+function validate(objMessages,button) {
 	for(elem of document.forms.form){
 		if (elem.classList.contains('required')) {
 			elem.classList.toggle('required');
 			elem.parentNode.lastElementChild.innerHTML = null;
 		}
-		if(elem === button||elem.tagName === 'TEXTAREA'){
+		if(elem === button||elem.dataset.validation === 'textarea'||elem.dataset.validation === 'gender'){
 			continue;
 		}
-		if (elem.tagName === "SELECT"&&elem.selectedIndex == 0) {
+		if (elem.dataset.validation === "select"&&elem.selectedIndex == 0) {
 			elem.classList.toggle('required');
 			elem.parentNode.lastElementChild.innerHTML = objMessages.empty;
 			continue;
 
 		}
-		if(elem.className === 'gender'){
-			continue;
+		if(elem.dataset.validation === 'email'){
+			validateEmail(objMessages,elem);
 		}
-		if(elem.value == ''&&elem.tagName != "SELECT"){
+		if(elem.value == ''&&elem.dataset.validation != "select"){
 			elem.parentNode.lastElementChild.innerHTML = objMessages.empty;
 			elem.classList.toggle('required');
 		}
